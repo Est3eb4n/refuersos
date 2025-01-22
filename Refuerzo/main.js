@@ -62,26 +62,28 @@ var contactos = [
   
  // Actualizar contacto
 
- function actualizar(idContacto){
-    rta = prompt('Desea actualizar los datos de contacto?')
-    let nuevoNombre = prompt("ingrese un nuevo nombre de usuario: ");
-    let nuevoNumero = prompt("ingrese un nuevo numero: ");
-    let nuevoEmail = prompt("ingrese un nuevo E-mail: ");
-    
-    const contacto= contactos.find(contacto => contacto.id === idContacto);
-   
-    if(rta == "si"){
+function actualizar(){
+  rta = prompt('Desea actualizar los datos de contacto?')
 
-    contacto.nombre = nuevoNombre;
-    contacto.numero = nuevoNumero;
-    contacto.email = nuevoEmail;
+  
+  const contacto= contactos.find(contacto => contacto.id === contactos);
+ 
+  if(rta == "si"){
 
-    console.log("Contacto actualizado", contacto);
-    }
-    if(rta == "no"){
-        return menu
-    }
- }
+  let nuevoNombre = prompt("ingrese un nuevo nombre de usuario: ");
+  let nuevoNumero = prompt("ingrese un nuevo numero: ");
+  let nuevoEmail = prompt("ingrese un nuevo E-mail: ");
+
+  contactos.nombre = nuevoNombre;
+  contactos.numero = nuevoNumero;
+  contactos.email = nuevoEmail;
+
+  console.log("Contacto actualizado", contactos);
+  }
+  if(rta == "no"){
+      return menu
+  }
+}
 
   
   while(true){
